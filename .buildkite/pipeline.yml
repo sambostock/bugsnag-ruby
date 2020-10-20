@@ -484,6 +484,7 @@ steps:
         command: ['features/rake.feature', '--tags', 'not @wip']
     env:
       RUBY_TEST_VERSION: '1.9.3'
+      VERBOSE: true
     concurrency: 4
     concurrency_group: 'ruby/integrations-maze-runner-tests'
 
