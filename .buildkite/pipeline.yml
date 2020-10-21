@@ -29,15 +29,15 @@ steps:
       RUBY_TEST_VERSION: "2.7"
       GEMSETS: "test sidekiq coverage"
 
-  - label: ':ruby: Ruby 2.7 linting'
-    plugins:
-      docker-compose#v3.1.0:
-        run: ruby-unit-tests
-        use-aliases: true
-    env:
-      RUBY_TEST_VERSION: "2.7"
-      GEMSETS: "test rubocop"
-    command: "bundle exec ./bin/rubocop lib/"
+#  - label: ':ruby: Ruby 2.7 linting'
+#    plugins:
+#      docker-compose#v3.1.0:
+#        run: ruby-unit-tests
+#        use-aliases: true
+#    env:
+#      RUBY_TEST_VERSION: "2.7"
+#      GEMSETS: "test rubocop"
+#    command: "bundle exec ./bin/rubocop lib/"
 
   - label: ':ruby: Ruby 2.7 plain tests'
     plugins:
