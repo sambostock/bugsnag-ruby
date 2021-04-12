@@ -11,6 +11,13 @@ steps:
             - ruby-maze-runner:855461928731.dkr.ecr.us-west-1.amazonaws.com/ruby:base-ruby${BRANCH_NAME}
             - ruby-maze-runner:855461928731.dkr.ecr.us-west-1.amazonaws.com/ruby:base-ruby-latest
 
+  - name: ':copyright: License Audit'
+    plugins:
+      - docker-compose#v3.7.0:
+          build: license-audit
+      - docker-compose#v3.7.0:
+          run: license-audit
+
   - wait
 
   - label: ':ruby: Ruby 1.9 unit tests'
