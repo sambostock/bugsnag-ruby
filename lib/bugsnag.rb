@@ -28,6 +28,7 @@ require "bugsnag/middleware/mailman"
 require "bugsnag/middleware/rake"
 require "bugsnag/middleware/classify_error"
 require "bugsnag/middleware/delayed_job"
+require "bugsnag/middleware/graphql"
 
 require "bugsnag/breadcrumb_type"
 require "bugsnag/breadcrumbs/validator"
@@ -40,7 +41,7 @@ require "bugsnag/utility/metadata_delegate"
 # rubocop:todo Metrics/ModuleLength
 module Bugsnag
   LOCK = Mutex.new
-  INTEGRATIONS = [:resque, :sidekiq, :mailman, :delayed_job, :shoryuken, :que, :mongo]
+  INTEGRATIONS = [:resque, :sidekiq, :mailman, :delayed_job, :shoryuken, :que, :mongo, :graphql]
 
   NIL_EXCEPTION_DESCRIPTION = "'nil' was notified as an exception"
 
