@@ -5,6 +5,8 @@ module Bugsnag
     module Instrumentation
       class << self
         def before_query(query)
+          # TODO: Should we simply save the query here, and lazy compute all of this instead?
+
           Bugsnag.configuration.set_request_data(:graphql, {
             # NOTE: Dumping in a bunch of stuff from https://graphql-ruby.org/api-doc/2.0.2/GraphQL/Query#operation_name-instance_method until we know what's useful
             schema: {
