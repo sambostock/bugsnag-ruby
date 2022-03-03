@@ -3,7 +3,7 @@ module Bugsnag
     ##
     # Attaches GraphQL query information to an error report
     class GraphQL
-      def initializer(bugsnag)
+      def initialize(bugsnag)
         @bugsnag = bugsnag
       end
 
